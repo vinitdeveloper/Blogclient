@@ -18,7 +18,7 @@ export default function AddPostComp() {
     const[title, setTitle] = useState("");
     const[description, setDescription] = useState("");
     const[image, setImage] = useState("");
-    const[status, setStatus] = useState(true);
+    const[status, setStatus] = useState(null);
 
 
     const handleAddPostSubmit = (evt) => {
@@ -71,6 +71,8 @@ export default function AddPostComp() {
         // this.setState({ selectedFile: event.target.files[0] });
       
       };
+
+      const toggleChecked = () => setStatus(value => !value);
 
     return (
         <>
@@ -133,7 +135,7 @@ export default function AddPostComp() {
                                         <div className="row mt-4 mbp-2">
                                             <div className="col-12">
                                                 <div className="form-check form-switch">
-                                                    <input className="form-check-input" type="checkbox" id="flexSwitchCheckDefault" defaultChecked={status ? true : false } onChange={e => setStatus(!e.target.value)} />
+                                                    <input className="form-check-input" type="checkbox" id="flexSwitchCheckDefault" defaultChecked={status ? true : false } onChange={toggleChecked} />
                                                     <label className="form-check-label" htmlFor="flexSwitchCheckDefault">Public Visiblity</label>
                                                 </div>
                                             </div>

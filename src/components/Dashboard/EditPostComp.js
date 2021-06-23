@@ -15,7 +15,7 @@ export default function EditPostComp(props) {
     const[title, setTitle] = useState("");
     const[description, setDescription] = useState("");
     const[image, setImage] = useState("");
-    const[status, setStatus] = useState(true);
+    const[status, setStatus] = useState(null);
 
     useEffect(() => {
         // console.log('working ',props.postId)
@@ -85,6 +85,8 @@ export default function EditPostComp(props) {
       
       };
 
+      const toggleChecked = () => setStatus(value => !value);
+
     return (
         <>
         <ToastContainer />
@@ -150,7 +152,7 @@ export default function EditPostComp(props) {
                                     <div className="row mt-4 mbp-2">
                                         <div className="col-12">
                                             <div className="form-check form-switch">
-                                                <input className="form-check-input" type="checkbox" id="flexSwitchCheckDefault" defaultChecked={status ? true : false } onChange={e => setStatus(!e.target.value)} />
+                                                <input className="form-check-input" type="checkbox" id="flexSwitchCheckDefault" defaultChecked={status ? true : false } onChange={toggleChecked} />
                                                 <label className="form-check-label" htmlFor="flexSwitchCheckDefault">Public Visiblity</label>
                                             </div>
                                         </div>
