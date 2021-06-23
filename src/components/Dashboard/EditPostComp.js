@@ -152,7 +152,7 @@ export default function EditPostComp(props) {
                                     <div className="row mt-4 mbp-2">
                                         <div className="col-12">
                                             <div className="form-check form-switch">
-                                                <input className="form-check-input" type="checkbox" id="flexSwitchCheckDefault" defaultChecked={status ? true : false } onChange={toggleChecked} />
+                                                <input className="form-check-input" type="checkbox" id="flexSwitchCheckDefault" checked={status} onChange={toggleChecked} />
                                                 <label className="form-check-label" htmlFor="flexSwitchCheckDefault">Public Visiblity</label>
                                             </div>
                                         </div>
